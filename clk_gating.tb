@@ -1,0 +1,28 @@
+module clk_gating_tb();
+reg clk,rst,enable;
+wire gated_clk,latch_1,latch_2;
+clk_gating dut(clk,enable,rst,gated_clk,latch_1,latch_2);
+initial begin
+clk=0;
+forever #5 clk=~clk;
+end
+initial begin
+rst=1;
+enable=0;
+$monitor("%0t %b %b %b",$time,clk,rst,enable,gated_clk);
+#20;rst=0; #30;
+enable=1;
+#40;
+enable=0;
+#30;
+enable=1;
+#50;
+enable=0;
+#20;
+rst=1;
+#10;
+rst=0;
+#100;
+$finish;
+end
+endmodule
