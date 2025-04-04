@@ -18,3 +18,7 @@ For example, if a module is not needed in the current operation cycle, the clock
 **Metastability Reduction:** Two-stage latching reduces chances of metastability when transitioning between states.
 
 This dual-latch clock gating technique effectively disables the clock when not needed, leading to significant power savings in large digital designs.
+
+**simulation results:**
+
+![image](https://github.com/user-attachments/assets/f4e0d6c5-c34e-4215-ad14-0dcd50edbb76)
